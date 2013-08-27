@@ -19,6 +19,13 @@
 		D063102617CA04BF00739CFC /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063102417CA04BF00739CFC /* MainStoryboard_iPhone.storyboard */; };
 		D063102917CA04BF00739CFC /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D063102717CA04BF00739CFC /* MainStoryboard_iPad.storyboard */; };
 		D063102C17CA04BF00739CFC /* BGSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D063102B17CA04BF00739CFC /* BGSViewController.m */; };
+		D063103617CA074200739CFC /* BGSImageSelectorVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D063103517CA074200739CFC /* BGSImageSelectorVC.m */; };
+		D063103C17CA16A600739CFC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D063103B17CA16A600739CFC /* AssetsLibrary.framework */; };
+		D069344E17CA6360000CE039 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D069344D17CA6360000CE039 /* QuartzCore.framework */; };
+		D069345417CB8572000CE039 /* BGSDemoCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345317CB8572000CE039 /* BGSDemoCropView.m */; };
+		D069345817CB85DF000CE039 /* BGSImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345717CB85DF000CE039 /* BGSImageCropper.m */; };
+		D069345B17CCA39D000CE039 /* BGSImageCropperUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345A17CCA39D000CE039 /* BGSImageCropperUIImageView.m */; };
+		D069345E17CCACE4000CE039 /* BGSImageCropperCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345D17CCACE3000CE039 /* BGSImageCropperCropView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +46,18 @@
 		D063102817CA04BF00739CFC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		D063102A17CA04BF00739CFC /* BGSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BGSViewController.h; sourceTree = "<group>"; };
 		D063102B17CA04BF00739CFC /* BGSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BGSViewController.m; sourceTree = "<group>"; };
+		D063103417CA074200739CFC /* BGSImageSelectorVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BGSImageSelectorVC.h; sourceTree = "<group>"; };
+		D063103517CA074200739CFC /* BGSImageSelectorVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BGSImageSelectorVC.m; sourceTree = "<group>"; };
+		D063103B17CA16A600739CFC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D069344D17CA6360000CE039 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D069345217CB8572000CE039 /* BGSDemoCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSDemoCropView.h; path = GUI/BGSDemoCropView.h; sourceTree = "<group>"; };
+		D069345317CB8572000CE039 /* BGSDemoCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSDemoCropView.m; path = GUI/BGSDemoCropView.m; sourceTree = "<group>"; };
+		D069345617CB85DF000CE039 /* BGSImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSImageCropper.h; path = BGSCropper/BGSImageCropper.h; sourceTree = "<group>"; };
+		D069345717CB85DF000CE039 /* BGSImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSImageCropper.m; path = BGSCropper/BGSImageCropper.m; sourceTree = "<group>"; };
+		D069345917CCA39D000CE039 /* BGSImageCropperUIImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSImageCropperUIImageView.h; path = BGSCropper/BGSImageCropperUIImageView.h; sourceTree = "<group>"; };
+		D069345A17CCA39D000CE039 /* BGSImageCropperUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSImageCropperUIImageView.m; path = BGSCropper/BGSImageCropperUIImageView.m; sourceTree = "<group>"; };
+		D069345C17CCACE3000CE039 /* BGSImageCropperCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSImageCropperCropView.h; path = BGSCropper/BGSImageCropperCropView.h; sourceTree = "<group>"; };
+		D069345D17CCACE3000CE039 /* BGSImageCropperCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSImageCropperCropView.m; path = BGSCropper/BGSImageCropperCropView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -46,6 +65,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D069344E17CA6360000CE039 /* QuartzCore.framework in Frameworks */,
+				D063103C17CA16A600739CFC /* AssetsLibrary.framework in Frameworks */,
 				D063100D17CA04BF00739CFC /* UIKit.framework in Frameworks */,
 				D063100F17CA04BF00739CFC /* Foundation.framework in Frameworks */,
 				D063101117CA04BF00739CFC /* CoreGraphics.framework in Frameworks */,
@@ -58,6 +79,10 @@
 		D063100017CA04BF00739CFC = {
 			isa = PBXGroup;
 			children = (
+				D063103D17CA300800739CFC /* Resources */,
+				D063103B17CA16A600739CFC /* AssetsLibrary.framework */,
+				D063103317CA070900739CFC /* GUI */,
+				D063103217CA04E200739CFC /* Storyboards */,
 				D063101217CA04BF00739CFC /* Image Editor */,
 				D063100B17CA04BF00739CFC /* Frameworks */,
 				D063100A17CA04BF00739CFC /* Products */,
@@ -75,6 +100,7 @@
 		D063100B17CA04BF00739CFC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D069344D17CA6360000CE039 /* QuartzCore.framework */,
 				D063100C17CA04BF00739CFC /* UIKit.framework */,
 				D063100E17CA04BF00739CFC /* Foundation.framework */,
 				D063101017CA04BF00739CFC /* CoreGraphics.framework */,
@@ -87,8 +113,6 @@
 			children = (
 				D063101B17CA04BF00739CFC /* BGSAppDelegate.h */,
 				D063101C17CA04BF00739CFC /* BGSAppDelegate.m */,
-				D063102417CA04BF00739CFC /* MainStoryboard_iPhone.storyboard */,
-				D063102717CA04BF00739CFC /* MainStoryboard_iPad.storyboard */,
 				D063102A17CA04BF00739CFC /* BGSViewController.h */,
 				D063102B17CA04BF00739CFC /* BGSViewController.m */,
 				D063101317CA04BF00739CFC /* Supporting Files */,
@@ -108,6 +132,55 @@
 				D063102217CA04BF00739CFC /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D063103217CA04E200739CFC /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				D063102417CA04BF00739CFC /* MainStoryboard_iPhone.storyboard */,
+				D063102717CA04BF00739CFC /* MainStoryboard_iPad.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		D063103317CA070900739CFC /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				D063103417CA074200739CFC /* BGSImageSelectorVC.h */,
+				D063103517CA074200739CFC /* BGSImageSelectorVC.m */,
+				D069345217CB8572000CE039 /* BGSDemoCropView.h */,
+				D069345317CB8572000CE039 /* BGSDemoCropView.m */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		D063103D17CA300800739CFC /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D069345517CB85A0000CE039 /* BGS Cropper */,
+				D063103E17CA301700739CFC /* Helpers */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		D063103E17CA301700739CFC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		D069345517CB85A0000CE039 /* BGS Cropper */ = {
+			isa = PBXGroup;
+			children = (
+				D069345617CB85DF000CE039 /* BGSImageCropper.h */,
+				D069345717CB85DF000CE039 /* BGSImageCropper.m */,
+				D069345917CCA39D000CE039 /* BGSImageCropperUIImageView.h */,
+				D069345A17CCA39D000CE039 /* BGSImageCropperUIImageView.m */,
+				D069345C17CCACE3000CE039 /* BGSImageCropperCropView.h */,
+				D069345D17CCACE3000CE039 /* BGSImageCropperCropView.m */,
+			);
+			name = "BGS Cropper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,6 +254,11 @@
 				D063101917CA04BF00739CFC /* main.m in Sources */,
 				D063101D17CA04BF00739CFC /* BGSAppDelegate.m in Sources */,
 				D063102C17CA04BF00739CFC /* BGSViewController.m in Sources */,
+				D063103617CA074200739CFC /* BGSImageSelectorVC.m in Sources */,
+				D069345417CB8572000CE039 /* BGSDemoCropView.m in Sources */,
+				D069345817CB85DF000CE039 /* BGSImageCropper.m in Sources */,
+				D069345B17CCA39D000CE039 /* BGSImageCropperUIImageView.m in Sources */,
+				D069345E17CCACE4000CE039 /* BGSImageCropperCropView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +279,7 @@
 				D063102517CA04BF00739CFC /* en */,
 			);
 			name = MainStoryboard_iPhone.storyboard;
+			path = "Image Editor";
 			sourceTree = "<group>";
 		};
 		D063102717CA04BF00739CFC /* MainStoryboard_iPad.storyboard */ = {
@@ -209,6 +288,7 @@
 				D063102817CA04BF00739CFC /* en */,
 			);
 			name = MainStoryboard_iPad.storyboard;
+			path = "Image Editor";
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -313,6 +393,7 @@
 				D063103117CA04BF00739CFC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
