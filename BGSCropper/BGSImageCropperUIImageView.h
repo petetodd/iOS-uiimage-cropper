@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BGSImageCropperCropView.h"
+
+#define RESIZE_EDGE_MARGIN 35.0f
+
 
 @interface BGSImageCropperUIImageView : UIImageView
+
+@property BOOL isCropModeOn;
+
+@property (strong, nonatomic) BGSImageCropperCropView * cropView;
+
 
 @end

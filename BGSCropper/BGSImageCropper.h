@@ -17,4 +17,7 @@
 
 - (void)setupUIImageView:(UIImage*)inImage;
 
+@property BOOL isCropModeOn;
+
+
 @end

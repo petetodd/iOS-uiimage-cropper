@@ -42,8 +42,8 @@
     [_imageView setUserInteractionEnabled:YES];
     
     
-    NSLog(@"DEBUG frame width: %f",self.bounds.size.width);
-    NSLog(@"DEBUG frame height: %f",self.bounds.size.height);
+ //   NSLog(@"DEBUG frame width: %f",self.bounds.size.width);
+ //   NSLog(@"DEBUG frame height: %f",self.bounds.size.height);
 
 
     
@@ -52,7 +52,13 @@
     [self drawPhotoInRect:[_imageView frame] drawPhoto:inImage];
 
     [self addSubview:_imageView];
-    [self drawCropBox];
+    
+    //Set as required
+    [self setIsCropModeOn:YES];
+    
+    if (self.isCropModeOn){
+        [self drawCropBox];
+    }
 
 }
 
@@ -69,6 +75,7 @@
 #pragma mark - Crop Box
 
 -(void)drawCropBox{
+    [_imageView setIsCropModeOn:[self isCropModeOn]];
     //Set box in centre of image and set to a 1/4 width and height imageview
     int origX = (_imageView.frame.size.width/2) - (_imageView.frame.size.width/4);
     int origY = (_imageView.frame.size.height/2) - (_imageView.frame.size.height/4);
@@ -104,12 +111,6 @@
 - (UIImage*)imageByCropping:(UIImage *)imageToCrop toRect:(CGRect)rect
 
 {
- //   return  _selectedImage;
-    
-    //create a context to do our clipping in
-    
-  
-    
     //scale up our cropper rect
     float cropX;
     float cropY;
