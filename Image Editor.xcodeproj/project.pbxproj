@@ -26,6 +26,7 @@
 		D069345817CB85DF000CE039 /* BGSImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345717CB85DF000CE039 /* BGSImageCropper.m */; };
 		D069345B17CCA39D000CE039 /* BGSImageCropperUIImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345A17CCA39D000CE039 /* BGSImageCropperUIImageView.m */; };
 		D069345E17CCACE4000CE039 /* BGSImageCropperCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = D069345D17CCACE3000CE039 /* BGSImageCropperCropView.m */; };
+		D069346117CE0C71000CE039 /* BGSImageCropperHandlesView.m in Sources */ = {isa = PBXBuildFile; fileRef = D069346017CE0C71000CE039 /* BGSImageCropperHandlesView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		D069345A17CCA39D000CE039 /* BGSImageCropperUIImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSImageCropperUIImageView.m; path = BGSCropper/BGSImageCropperUIImageView.m; sourceTree = "<group>"; };
 		D069345C17CCACE3000CE039 /* BGSImageCropperCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSImageCropperCropView.h; path = BGSCropper/BGSImageCropperCropView.h; sourceTree = "<group>"; };
 		D069345D17CCACE3000CE039 /* BGSImageCropperCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSImageCropperCropView.m; path = BGSCropper/BGSImageCropperCropView.m; sourceTree = "<group>"; };
+		D069345F17CE0C71000CE039 /* BGSImageCropperHandlesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BGSImageCropperHandlesView.h; path = BGSCropper/BGSImageCropperHandlesView.h; sourceTree = "<group>"; };
+		D069346017CE0C71000CE039 /* BGSImageCropperHandlesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BGSImageCropperHandlesView.m; path = BGSCropper/BGSImageCropperHandlesView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				D069345A17CCA39D000CE039 /* BGSImageCropperUIImageView.m */,
 				D069345C17CCACE3000CE039 /* BGSImageCropperCropView.h */,
 				D069345D17CCACE3000CE039 /* BGSImageCropperCropView.m */,
+				D069345F17CE0C71000CE039 /* BGSImageCropperHandlesView.h */,
+				D069346017CE0C71000CE039 /* BGSImageCropperHandlesView.m */,
 			);
 			name = "BGS Cropper";
 			sourceTree = "<group>";
@@ -259,6 +264,7 @@
 				D069345817CB85DF000CE039 /* BGSImageCropper.m in Sources */,
 				D069345B17CCA39D000CE039 /* BGSImageCropperUIImageView.m in Sources */,
 				D069345E17CCACE4000CE039 /* BGSImageCropperCropView.m in Sources */,
+				D069346117CE0C71000CE039 /* BGSImageCropperHandlesView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -85,6 +85,7 @@
     [_cropView setBackgroundColor:[UIColor grayColor]];
     [_cropView setAlpha:0.7];
     [_imageView addSubview:_cropView];
+    [_imageView setCropView:_cropView];
     // Ad gesture recog
     [self configGesturesCropBox];
     

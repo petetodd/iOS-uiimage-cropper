@@ -7,6 +7,7 @@
 //
 
 #import "BGSImageCropperUIImageView.h"
+#import "BGSImageCropperHandlesView.h"
 
 @implementation BGSImageCropperUIImageView{
     BOOL _dragging;
@@ -74,6 +75,7 @@
         
         
         
+        
     }
 
     
@@ -85,7 +87,68 @@
  //   NSLog(@"DEBUG BGSImageCropperUIImageView Touches Moved");
     UITouch *touch = [[event allTouches] anyObject];
     CGPoint touchLocation = [touch locationInView:touch.view];
-    
+    NSLog(@"DEBUG [touch.view class] : %@",[touch.view class]);
+
+    if ([[touch.view class] isSubclassOfClass:[BGSImageCropperHandlesView class]]) {
+        NSLog(@"DEBUG touchesMoved BGSImageCropperHandlesView");
+        [self setIsCropModeOn:YES];
+        CGRect frame = self.cropView.frame;
+
+        BGSImageCropperHandlesView *cropHandle = (BGSImageCropperHandlesView *) touch.view;
+        if ([cropHandle.handleType isEqualToString:@"TOPLEFT"]){
+            // Top left is 0,0
+            _oldX = 0;
+            _oldY = 0;
+            [self.cropView removeCropHandle:@"TOPLEFT"];
+                 
+            if ( (self.cropView.frame.size.width - (touchLocation.x -_oldX)) >= (2* RESIZE_EDGE_MARGIN)){
+                frame.origin.x = self.cropView.frame.origin.x + touchLocation.x - _oldX;
+                frame.size.width = (self.cropView.frame.size.width - (touchLocation.x -_oldX));
+            }
+            if ( (self.cropView.frame.size.height - (touchLocation.y - _oldY)) >= (2* RESIZE_EDGE_MARGIN)){
+                frame.origin.y = self.cropView.frame.origin.y + touchLocation.y - _oldY;
+                frame.size.height = (self.cropView.frame.size.height - (touchLocation.y - _oldY));
+            }
+        
+
+        }
+        
+        if ([cropHandle.handleType isEqualToString:@"LOWERRIGHT"]){
+            _oldX = 0;
+            _oldY = 0;
+            [self.cropView removeCropHandle:@"LOWERRIGHT"];
+            
+        }
+
+        
+        
+        
+        
+        
+        // Constrain the crop view to the imageview
+        if (frame.origin.x <0) frame.origin.x = 0;
+        if (frame.origin.y <0) frame.origin.y = 0;
+        //     NSLog(@"DEBUG touchesMoved in crop view.  X : Y = %f : %f",frame.origin.x,frame.origin.y);
+        // x contraint
+        float cropX = frame.origin.x + (frame.size.width);
+        if(cropX > self.frame.size.width){
+            frame.origin.x = (self.frame.size.width - frame.size.width);
+        }
+        // y contraint (bottom)
+        float cropY = frame.origin.y + (frame.size.height);
+        if(cropY > self.frame.size.height){
+            frame.origin.y = (self.frame.size.height - frame.size.height);
+        }
+        
+     //   [self.cropView drawRect:frame];
+        
+        self.cropView.frame = frame;
+        [self.cropView setNeedsDisplay];
+
+        
+  
+    }
+
     
     
      if ([[touch.view class] isSubclassOfClass:[BGSImageCropperCropView class]]) {
@@ -95,11 +158,11 @@
              CGRect frame = self.cropView.frame;
              frame.origin.x = self.cropView.frame.origin.x + touchLocation.x - _oldX;
              frame.origin.y = self.cropView.frame.origin.y + touchLocation.y - _oldY;
-             NSLog(@"DEBUG touchesMoved in crop view.  X : Y = %f : %f",frame.origin.x,frame.origin.y);
+       //      NSLog(@"DEBUG touchesMoved in crop view.  X : Y = %f : %f",frame.origin.x,frame.origin.y);
              // Constrain the crop view to the imageview
              if (frame.origin.x <0) frame.origin.x = 0;
              if (frame.origin.y <0) frame.origin.y = 0;
-             NSLog(@"DEBUG touchesMoved in crop view.  X : Y = %f : %f",frame.origin.x,frame.origin.y);
+       //      NSLog(@"DEBUG touchesMoved in crop view.  X : Y = %f : %f",frame.origin.x,frame.origin.y);
              // x contraint
              float cropX = frame.origin.x + (frame.size.width);
              if(cropX > self.frame.size.width){
@@ -114,6 +177,7 @@
 
              self.cropView.frame = frame;
          } else if(_resizeCropRect){
+ /*
              
              CGRect frame = self.cropView.frame;
              // x adjustment
@@ -159,10 +223,9 @@
              if(cropY > self.frame.size.height){
                  frame.origin.y = (self.frame.size.height - frame.size.height);
              }
-             
-             
+ 
              self.cropView.frame = frame;
-
+*/
              
          }
          
@@ -172,8 +235,18 @@
 
 }
 
+
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
     _dragging = NO;
+ //   if (self.isCropModeOn){
+ //       [self setIsCropModeOn:NO];
+ //   }
+    [self.cropView removeCropperHandles];
+    [self.cropView addCropperHandles];
+
+    NSLog(@"DEBUG BGSImageCropperUIImageView touchesEnded");
+
 }
 
 -(void)cropImageToCropper{

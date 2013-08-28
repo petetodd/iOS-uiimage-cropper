@@ -18,5 +18,4 @@
 
 @property (strong, nonatomic) BGSImageCropperCropView * cropView;
 
-
 @end
