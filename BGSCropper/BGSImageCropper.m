@@ -33,6 +33,17 @@
 
 
 - (void)setupUIImageView:(UIImage*)inImage{
+    // Ensure the imageview is clear
+    [_imageView setImage:Nil];
+    NSMutableArray * objectsToRemove = [[NSMutableArray alloc]init];
+    for (int i= 0;i < _imageView.subviews.count; i++){
+            [objectsToRemove addObject:[self.subviews objectAtIndex:i]];
+    }
+    for (int i=0;i < objectsToRemove.count; i++){
+            [[objectsToRemove objectAtIndex:i] removeFromSuperview];
+    }
+
+    
     _selectedImage = inImage;
 
     int bottomViewHeight = 50;
@@ -48,7 +59,7 @@
 
     
     [self setBackgroundColor:[UIColor blueColor]];
-    [_imageView setBackgroundColor:[UIColor redColor]];
+    [_imageView setBackgroundColor:[UIColor clearColor]];
     [self drawPhotoInRect:[_imageView frame] drawPhoto:inImage];
 
     [self addSubview:_imageView];

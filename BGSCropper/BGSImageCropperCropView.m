@@ -85,7 +85,10 @@
     
     for (int i=0;i < objectsToRemove.count; i++){
         if ([[(BGSImageCropperHandlesView *) [objectsToRemove objectAtIndex:i] handleType] isEqualToString:handleType]){
-            // Keep this handle
+            if ([handleType isEqualToString:@"LOWERRIGHT"]){
+                // Always remove lowe right as otherwise it hangs in previous position (got to be a better way to handle this!)
+                [[objectsToRemove objectAtIndex:i] removeFromSuperview];
+            }
         }else{
             [[objectsToRemove objectAtIndex:i] removeFromSuperview];
 

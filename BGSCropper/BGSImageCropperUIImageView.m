@@ -137,7 +137,7 @@
             NSLog(@"DEBUG xMovement : %f",xMovement);
             _oldX = touchLocation.x;
             
-            [self.cropView removeCropHandle:@"LOWERRIGHT"];
+           // [self.cropView removeCropHandle:@"LOWERRIGHT"];
             if ((self.cropView.frame.size.width + xMovement) >= (2* RESIZE_EDGE_MARGIN)){
                 // Need to ensurwidth does not exceed image view
                 float widthConstraint = self.cropView.frame.origin.x + (self.cropView.frame.size.width + xMovement);
