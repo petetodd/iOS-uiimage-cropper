@@ -12,10 +12,14 @@
 #define TOP_AND_BOTTOM_MARGIN 5.0f
 #define SIDE_MARGIN 5.0f
 
+#define MAX_CONTROL_BAR_HEIGHT 50.0f
+
 
 @interface BGSImageCropper : UIView
 
 - (void)setupUIImageView:(UIImage*)inImage;
+
+- (void)simpleControlBar;
 
 @property BOOL isCropModeOn;
 

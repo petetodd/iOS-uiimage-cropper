@@ -109,7 +109,8 @@
 }
 
 - (IBAction)butImageSelectAction:(id)sender {
-    [self performSegueWithIdentifier:@"demoCrop" sender:self];
+    [self imagePickerAction:sender];
+//    [self performSegueWithIdentifier:@"demoCrop" sender:self];
 
 }
 

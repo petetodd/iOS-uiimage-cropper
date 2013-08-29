@@ -31,6 +31,50 @@
 }
 
 
+// SImple control bar will only allow Crop on Off
+- (void)simpleControlBar{
+    float controlBarHeight = (self.frame.size.height - _imageView.frame.size.height);
+    if (controlBarHeight > MAX_CONTROL_BAR_HEIGHT){
+        controlBarHeight = MAX_CONTROL_BAR_HEIGHT;
+    }
+    
+    float controlBarOriginY = (self.frame.size.height - controlBarHeight);
+    
+    CGRect controlBarRect = CGRectMake(5, controlBarOriginY, (self.bounds.size.width - 10), controlBarHeight);
+    [[UIColor greenColor] set];
+    UIRectFill(controlBarRect);
+    
+    // Crop Button
+    CGRect buttonCrop = CGRectMake(controlBarRect.origin.x, controlBarRect.origin.y, (controlBarRect.size.width /4), controlBarHeight);
+    [self drawButton:@"CROP" inRect:buttonCrop buttonAssignAction:@"CROP"];
+
+    
+    
+    
+}
+
+
+// Draw a UIButton centered in a rectangle
+
+- (void) drawButton: (NSString*) butTitle inRect: (CGRect) butRect buttonAssignAction: (NSString*) buttonAction{
+    UIButton *theButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+    [theButton setTitle:butTitle forState:(UIControlStateNormal)];
+    [theButton sizeToFit];
+    [theButton setCenter:CGPointMake(CGRectGetMidX(butRect),CGRectGetMidY(butRect))];
+    if ([buttonAction isEqualToString:@"CROP"]){
+        [theButton addTarget:self
+                      action:@selector(drawCropBox)
+            forControlEvents:UIControlEventTouchUpInside];
+    }
+    
+    [self addSubview:theButton];
+    
+}
+
+
+
+
+
 
 - (void)setupUIImageView:(UIImage*)inImage{
     // Ensure the imageview is clear
@@ -42,6 +86,7 @@
     for (int i=0;i < objectsToRemove.count; i++){
             [[objectsToRemove objectAtIndex:i] removeFromSuperview];
     }
+    [self setIsCropModeOn:NO];
 
     
     _selectedImage = inImage;
@@ -63,42 +108,42 @@
     [self drawPhotoInRect:[_imageView frame] drawPhoto:inImage];
 
     [self addSubview:_imageView];
-    
-    //Set as required
-    [self setIsCropModeOn:YES];
-    
-    if (self.isCropModeOn){
-        [self drawCropBox];
-    }
 
 }
 
 
-/*
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
 {
     // Drawing code
+    [self simpleControlBar];
 }
-*/
+
 
 #pragma mark - Crop Box
 
 -(void)drawCropBox{
-    [_imageView setIsCropModeOn:[self isCropModeOn]];
-    //Set box in centre of image and set to a 1/4 width and height imageview
-    int origX = (_imageView.frame.size.width/2) - (_imageView.frame.size.width/4);
-    int origY = (_imageView.frame.size.height/2) - (_imageView.frame.size.height/4);
+    if (!self.isCropModeOn){
+        [_imageView setIsCropModeOn:[self isCropModeOn]];
+        //Set box in centre of image and set to a 1/4 width and height imageview
+        int origX = (_imageView.frame.size.width/2) - (_imageView.frame.size.width/4);
+        int origY = (_imageView.frame.size.height/2) - (_imageView.frame.size.height/4);
+        
+        CGRect cropRect = CGRectMake(origX, origY, (_imageView.frame.size.width/2), (_imageView.frame.size.height/2));
+        _cropView = [[BGSImageCropperCropView alloc]initWithFrame:cropRect];
+        [_cropView setBackgroundColor:[UIColor grayColor]];
+        [_cropView setAlpha:0.7];
+        [_imageView addSubview:_cropView];
+        [_imageView setCropView:_cropView];
+        // Ad gesture recog
+        [self configGesturesCropBox];
+        [self setIsCropModeOn:YES];
+    }else{
+        // already in crop mode so do nothing
+    }
 
-    CGRect cropRect = CGRectMake(origX, origY, (_imageView.frame.size.width/2), (_imageView.frame.size.height/2));
-    _cropView = [[BGSImageCropperCropView alloc]initWithFrame:cropRect];
-    [_cropView setBackgroundColor:[UIColor grayColor]];
-    [_cropView setAlpha:0.7];
-    [_imageView addSubview:_cropView];
-    [_imageView setCropView:_cropView];
-    // Ad gesture recog
-    [self configGesturesCropBox];
     
 
     
