@@ -147,32 +147,6 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BGSCropper/BGSImageCropperUIImageView.m"
-         timestampString = "399402224.762734"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "190"
-         endingLineNumber = "190"
-         landmarkName = "-touchesMoved:withEvent:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "BGSCropper/BGSImageCropperUIImageView.m"
-         timestampString = "399402224.762734"
-         startingColumnNumber = "9223372036854775807"
-         endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "198"
-         endingLineNumber = "198"
-         landmarkName = "-touchesMoved:withEvent:"
-         landmarkType = "5">
-      </FileBreakpoint>
-      <FileBreakpoint
-         shouldBeEnabled = "No"
-         ignoreCount = "0"
-         continueAfterRunningActions = "No"
-         filePath = "BGSCropper/BGSImageCropperUIImageView.m"
          timestampString = "399380889.031346"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
@@ -212,11 +186,11 @@
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "BGSCropper/BGSImageCropperUIImageView.m"
-         timestampString = "399402224.762734"
+         timestampString = "399463367.455177"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "108"
-         endingLineNumber = "108"
+         startingLineNumber = "111"
+         endingLineNumber = "111"
          landmarkName = "-touchesMoved:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
@@ -231,6 +205,45 @@
          startingLineNumber = "51"
          endingLineNumber = "51"
          landmarkName = "-touchesBegan:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BGSCropper/BGSImageCropperUIImageView.m"
+         timestampString = "399463367.455177"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "121"
+         endingLineNumber = "121"
+         landmarkName = "-touchesMoved:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BGSCropper/BGSImageCropperUIImageView.m"
+         timestampString = "399463367.455177"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "167"
+         endingLineNumber = "167"
+         landmarkName = "-touchesMoved:withEvent:"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "No"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "BGSCropper/BGSImageCropperUIImageView.m"
+         timestampString = "399463367.455177"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "209"
+         endingLineNumber = "209"
+         landmarkName = "-touchesMoved:withEvent:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>
