@@ -125,12 +125,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="xLH-B2-lPZ"/>
                     <connections>
+                        <outlet property="navBar" destination="Mkw-N7-gLR" id="ZGK-mK-26d"/>
                         <outlet property="viewBGSImageCropper" destination="mKZ-Wj-APK" id="LL4-50-oFY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dG-gy-dgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1182" y="-446"/>
+            <point key="canvasLocation" x="1087" y="-482"/>
         </scene>
     </scenes>
     <classes>
@@ -139,6 +140,7 @@
             <relationships>
                 <relationship kind="action" name="butCancelAction:"/>
                 <relationship kind="action" name="butSaveAction:"/>
+                <relationship kind="outlet" name="navBar" candidateClass="UINavigationBar"/>
                 <relationship kind="outlet" name="viewBGSImageCropper" candidateClass="BGSImageCropper"/>
             </relationships>
         </class>

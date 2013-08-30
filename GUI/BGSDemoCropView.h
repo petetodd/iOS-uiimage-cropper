@@ -20,6 +20,7 @@
 @property (weak) id <BGSDemoCropViewDelegate> delegate;
 
 @property (strong, nonatomic) UIImage *selectedImage;
+@property (weak, nonatomic) IBOutlet UINavigationBar *navBar;
 
 - (IBAction)butCancelAction:(id)sender;
 - (IBAction)butSaveAction:(id)sender;
